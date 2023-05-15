@@ -5,10 +5,10 @@ pipeline {
         stage('Build and Package') {
             steps {
                 script{
-                 sh """
-                /opt/maven/bin/mvn clean package
-                mv target/java-hello-world.war target/java-helloworld-$BUILD_NUMBER.war
-                aws s3 cp target/java-helloworld-$BUILD_NUMBER.war s3://jenkins-satatic/
+                sh """
+                    /opt/maven/bin/mvn clean package
+                    mv target/java-hello-world.war target/java-helloworld-$BUILD_NUMBER.war
+                    aws s3 cp target/java-helloworld-$BUILD_NUMBER.war s3://jenkins-satatic/
                 """  
                 }
             }
@@ -18,8 +18,8 @@ pipeline {
             steps {
                 script{
                 sh """   
-              aws s3 cp s3://jenkins-satatic/java-helloworld-3.war .
-              scp java-helloworld-3.war root@172.31.36.193:/root/tomcat/webapps
+                    aws s3 cp s3://jenkins-satatic/java-helloworld-3.war .
+                    scp java-helloworld-3.war root@172.31.36.193:/root/tomcat/webapps
                 """
                 }
             }
