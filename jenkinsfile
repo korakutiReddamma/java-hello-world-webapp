@@ -14,17 +14,17 @@ pipeline {
             }
         }
 
-        stage('Download and Deploy') {
-            steps {
-                script{
-                sh """   
-                 cd
-                 aws s3 cp s3://jenkins-satatic/java-helloworld-$build.war .
-                 scp  java-helloworld-$build.war ec2-user@:172.31.33.253/home/ec2-user
-                 scp  java-helloworld-$build.war ec2-user@:172.31.33.253/opt/tomcat/webapps
-                """
-                }
-            }
-        }
+        // stage('Download and Deploy') {
+        //     steps {
+        //         script{
+        //         sh """   
+        //          cd
+        //          aws s3 cp s3://jenkins-satatic/java-helloworld-$build.war .
+        //          scp  java-helloworld-$build.war ec2-user@:172.31.33.253/home/ec2-user
+        //          scp  java-helloworld-$build.war ec2-user@:172.31.33.253/opt/tomcat/webapps
+        //         """
+        //         }
+        //     }
+        // }
     }
 }
