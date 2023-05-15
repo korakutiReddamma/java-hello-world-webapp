@@ -9,7 +9,7 @@ pipeline {
                  /opt/maven/bin/mvn clean package
                  mv target/java-hello-world.war target/java-helloworld-$BUILD_NUMBER.war
                  aws s3 cp target/java-helloworld-$BUILD_NUMBER.war s3://jenkins-satatic/
-                """
+                """  
                 }
             }
         }
