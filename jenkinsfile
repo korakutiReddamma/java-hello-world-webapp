@@ -22,16 +22,5 @@ pipeline {
                 }
             }
         }
-        stage('Running stage') {
-            steps {
-                  {
-                    sh """
-
-                        scp java-helloworld-3.war root@172.31.36.193:/root/tomcat/bin sh startup.sh
-                    """
-                }
-            }
-        }
     }
 }
-
