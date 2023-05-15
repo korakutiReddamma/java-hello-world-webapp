@@ -22,7 +22,7 @@ pipeline {
                 }
             }
         }
-                stage('Running stage') {
+        stage('Running stage') {
             steps {
                   {
                     sh """
@@ -34,3 +34,4 @@ pipeline {
         }
     }
 }
+
