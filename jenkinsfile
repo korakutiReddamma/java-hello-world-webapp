@@ -18,10 +18,10 @@ pipeline {
             steps {
                 script{
                 sh """   
-                  cd
+                 cd
                  aws s3 cp s3://jenkins-satatic/java-helloworld-$build.war .
-                 scp -i java-helloworld-$build.war ec2-user@:172.31.33.253/home/ec2-user
-                 scp -i java-helloworld-$build.war ec2-user@:172.31.33.253/opt/tomcat/webapps
+                 scp  java-helloworld-$build.war ec2-user@:172.31.33.253/home/ec2-user
+                 scp  java-helloworld-$build.war ec2-user@:172.31.33.253/opt/tomcat/webapps
                 """
                 }
             }
