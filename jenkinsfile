@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Running stage'){
             steps{
-                sh 'ssh root@172.31.36.193 "cd /root/tomcat/bin sh startup.sh"'
+                sh 'ssh root@172.31.36.193 "cd /root/tomcat/bin && sh startup.sh"'
             }
         }
     }
